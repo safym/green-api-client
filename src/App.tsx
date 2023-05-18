@@ -1,13 +1,16 @@
-import './App.css'
+import TodoProvider from './context/AuthContext'
+import AuthContainer from './containers/AuthContainer'
 
-function App() {
-  
+import AuthForm from './components/AuthForm'
 
+export default function App() {
   return (
-    <div className="App">
-      hello
-    </div>
+    <TodoProvider>
+      <main className="App">
+        <h1>Auth test</h1>
+        <AuthForm />
+        <AuthContainer />
+      </main>
+    </TodoProvider>
   )
 }
-
-export default App
