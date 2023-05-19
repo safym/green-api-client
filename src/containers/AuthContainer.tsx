@@ -7,7 +7,7 @@ import { cleanSpecialChar } from '../utils/cleanSpecialChar'
 import Input from '../components/Input'
 import Button from '../components/Button'
 
-const AuthForm: React.FC = () => {
+const AuthContainer: React.FC = () => {
   // Данные instance контекста авторизации
   const { instance, setAuth } = useContext(AuthContext) as AuthContextType
   // Данные формы
@@ -71,7 +71,7 @@ const AuthForm: React.FC = () => {
   }, [instance])
 
   return (
-    <div>
+    <>
       <p>ID: {instance.idInstance}</p>
       <p>Token: {instance.token}</p>
       <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p>
@@ -96,8 +96,8 @@ const AuthForm: React.FC = () => {
           {isLoading ? 'Loading...' : 'Login'}
         </Button>
       </form>
-    </div>
+    </>
   )
 }
 
-export default AuthForm
+export default AuthContainer

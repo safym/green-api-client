@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import AuthProvider from './context/AuthProvider'
 import Layout from './pages/Layout'
 import Auth from './pages/Auth'
-import Chat from './pages/Chat'
+import Messenger from './pages/Messenger'
 
 const App: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="/" element={<Auth />} />
-              <Route path="/chat" element={<Chat />} />
+              <Route path="/messenger" element={<Messenger />} />
             </Route>
           </Routes>
         </HashRouter>

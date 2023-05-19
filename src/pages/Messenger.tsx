@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 import { AuthContextType } from '../@types/auth'
 import { AuthContext } from '../context/AuthProvider'
+import MessengerContainer from '../containers/MessengerContainer'
 
-const Chat = () => {
+const Messenger = () => {
   const { instance, setAuth } = useContext(AuthContext) as AuthContextType
   const navigate = useNavigate()
 
@@ -17,9 +18,10 @@ const Chat = () => {
 
   return (
     <div>
-      <h1>Chat page</h1>
+      <h1>Messenger page</h1>
+      <MessengerContainer />
     </div>
   )
 }
 
-export default Chat
+export default Messenger

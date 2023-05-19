@@ -4,9 +4,9 @@ const Layout = () => {
   return (
     <div>
       <nav>
-        <NavLink to={''}>Auth</NavLink>
+        <NavLink to={'/'}>Auth</NavLink>
         <br />
-        <NavLink to={'/chat'}>Chats</NavLink>
+        <NavLink to={'/messenger'}>Messenger</NavLink>
       </nav>
       <h1>is layout with</h1>
       <Outlet />
