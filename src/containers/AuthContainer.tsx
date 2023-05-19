@@ -6,6 +6,7 @@ import { getStateInstance } from '../api/api'
 import { cleanSpecialChar } from '../utils/cleanSpecialChar'
 import Input from '../components/Input'
 import Button from '../components/Button'
+import { setLocalStorageItem } from '../utils/setLocalStorageItem'
 
 const AuthContainer: React.FC = () => {
   // Данные instance контекста авторизации
@@ -56,7 +57,10 @@ const AuthContainer: React.FC = () => {
       const response = await getStateInstance(instance)
 
       if (response && response.stateInstance === 'authorized') {
-        setAuth({ ...instance, isAuth: true })
+        const newInstance = { ...instance, isAuth: true }
+
+        setAuth(newInstance)
+        setLocalStorageItem('instance', newInstance)
         setAuthError(false)
       } else {
         setAuth({ ...instance, isAuth: false })
@@ -69,6 +73,16 @@ const AuthContainer: React.FC = () => {
 
     fetchApi()
   }, [instance])
+
+  useEffect(() => {
+    const instanceDataString = localStorage.getItem('instance')
+
+    if (instanceDataString) {
+      const instanceData = JSON.parse(instanceDataString)
+
+      setAuth({ ...instanceData })
+    }
+  }, [])
 
   return (
     <>
@@ -92,9 +106,7 @@ const AuthContainer: React.FC = () => {
           onChange={handleInputChange}
           required
         />
-        <Button type={'submit'}>
-          {isLoading ? 'Loading...' : 'Login'}
-        </Button>
+        <Button type={'submit'}>{isLoading ? 'Loading...' : 'Login'}</Button>
       </form>
     </>
   )
