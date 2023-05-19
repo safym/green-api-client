@@ -15,7 +15,7 @@ export const getStateInstance = async ({ idInstance, token }: Instance) => {
 
     return await response.json()
   } catch (error) {
-    alert(error)
+    console.error(error)
   }
 }
 
