@@ -1,11 +1,10 @@
 export interface Instance {
-  idInstance: string;
-  token: string;
-  status: boolean;
+  idInstance: string
+  token: string
+  isAuth: boolean
 }
 
-export type AuthContextType = {
-  instance: Instance;
-  setAuth: (todo: Instance) => void;
-  updateStatus: () => void;
-};
+export interface AuthContextType {
+  instance: Instance
+  setAuth: (data: Instance) => void
+}

@@ -1,16 +1,26 @@
-import TodoProvider from './context/AuthContext'
-import AuthContainer from './containers/AuthContainer'
+import React from 'react'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
-import AuthForm from './components/AuthForm'
+import AuthProvider from './context/AuthProvider'
+import Layout from './pages/Layout'
+import Auth from './pages/Auth'
+import Chat from './pages/Chat'
 
-export default function App() {
+const App: React.FC = () => {
   return (
-    <TodoProvider>
-      <main className="App">
-        <h1>Auth test</h1>
-        <AuthForm />
-        <AuthContainer />
-      </main>
-    </TodoProvider>
+    <main className="App">
+      <AuthProvider>
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="/" element={<Auth />} />
+              <Route path="/chat" element={<Chat />} />
+            </Route>
+          </Routes>
+        </HashRouter>
+      </AuthProvider>
+    </main>
   )
 }
+
+export default App
