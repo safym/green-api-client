@@ -11,13 +11,9 @@ const AuthProvider: React.FC<any> = ({ children }) => {
     isAuth: false,
   })
 
-  const setAuth = (data: Instance) => {
-    setInstance(data)
-  }
-
   const contextValue: AuthContextType = {
     instance,
-    setAuth,
+    setInstance,
   }
 
   return (

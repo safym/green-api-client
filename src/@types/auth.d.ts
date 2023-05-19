@@ -6,5 +6,5 @@ export interface Instance {
 
 export interface AuthContextType {
   instance: Instance
-  setAuth: (data: Instance) => void
+  setInstance: Dispatch<SetStateAction<Instance>>
 }

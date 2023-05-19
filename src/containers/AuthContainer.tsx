@@ -10,7 +10,7 @@ import { setLocalStorageItem } from '../utils/setLocalStorageItem'
 
 const AuthContainer: React.FC = () => {
   // Данные instance контекста авторизации
-  const { instance, setAuth } = useContext(AuthContext) as AuthContextType
+  const { instance, setInstance } = useContext(AuthContext) as AuthContextType
   // Данные формы
   const [formData, setFormData] = useState<Instance>({
     idInstance: '',
@@ -40,7 +40,7 @@ const AuthContainer: React.FC = () => {
     setformIsSubmit(true)
     e.preventDefault()
 
-    setAuth(formData)
+    setInstance(formData)
 
     setFormData({ idInstance: '', token: '', isAuth: false })
   }
@@ -59,11 +59,11 @@ const AuthContainer: React.FC = () => {
       if (response && response.stateInstance === 'authorized') {
         const newInstance = { ...instance, isAuth: true }
 
-        setAuth(newInstance)
+        setInstance(newInstance)
         setLocalStorageItem('instance', newInstance)
         setAuthError(false)
       } else {
-        setAuth({ ...instance, isAuth: false })
+        setInstance({ ...instance, isAuth: false })
         setAuthError(true)
       }
 
@@ -80,7 +80,7 @@ const AuthContainer: React.FC = () => {
     if (instanceDataString) {
       const instanceData = JSON.parse(instanceDataString)
 
-      setAuth({ ...instanceData })
+      setInstance({ ...instanceData })
     }
   }, [])
 
