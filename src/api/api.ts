@@ -1,4 +1,3 @@
-
 import { Instance } from '../@types/auth'
 
 // Авторизация пользователя по idInstance и apiTokenInstance
@@ -19,13 +18,29 @@ export const getStateInstance = async ({ idInstance, token }: Instance) => {
   }
 }
 
-// Получить пользователя по номеру телефона
-export const fetchUser = async () => {
+// Проверить пользователя Whatsapp по номеру телефона
+export const checkWhatsapp = async (
+  { idInstance, token }: Instance,
+  phoneNumber: string
+) => {
   try {
-    // TODO: request to api
+    console.log(idInstance, token, phoneNumber)
+
+    const data = {
+      phoneNumber,
+    }
+
+    const response = await fetch(
+      `https://api.green-api.com/waInstance${idInstance}/CheckWhatsapp/${token}`,
+      {
+        method: 'POST',
+        body: JSON.stringify(data),
+      }
+    )
+
+    return await response.json()
   } catch (error) {
-    console.error('Ошибка при получении пользователя:', error)
-    throw error
+    console.error('Ошибка при проверке Whatsapp пользователя:', error)
   }
 }
 
