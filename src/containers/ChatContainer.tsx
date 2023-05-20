@@ -4,10 +4,11 @@ import { ChatItem, MessengerContextType } from '../@types/messenger'
 import { Message } from '../@types/chat'
 import { AuthContextType } from '../@types/auth'
 
+import { sendMessage } from '../api/api'
+
 import { AuthContext } from '../context/AuthProvider'
 import { MessengerContext } from '../context/MessengerProvider'
 import Button from '../components/Button'
-import { sendMessage } from '../api/api'
 
 const ChatContainer = () => {
   const messageInitialState = {

@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 
 import { Instance, AuthContextType } from '../@types/auth'
+
 import { getStateInstance } from '../api/api'
 
 import { AuthContext } from '../context/AuthProvider'
