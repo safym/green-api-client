@@ -1,5 +1,7 @@
 import { useContext } from 'react'
+
 import { ChatItem, MessengerContextType } from '../@types/messenger'
+
 import { MessengerContext } from '../context/MessengerProvider'
 
 const ChatContainer = () => {

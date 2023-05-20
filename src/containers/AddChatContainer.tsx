@@ -1,15 +1,17 @@
 import React, { useContext, useState, useEffect } from 'react'
 
 import { AuthContextType } from '../@types/auth'
-import { AuthContext } from '../context/AuthProvider'
-
 import { ChatItem, MessengerContextType } from '../@types/messenger'
+import { checkWhatsapp } from '../api/api'
+
+import { AuthContext } from '../context/AuthProvider'
 import { MessengerContext } from '../context/MessengerProvider'
+
 import Button from '../components/Button'
 import Input from '../components/Input'
+
 import { cleanDigits } from '../utils/cleanDigits'
 import { getChatId } from '../utils/getChatId'
-import { checkWhatsapp } from '../api/api'
 import { setLocalStorageItem } from '../utils/setLocalStorageItem'
 import { getLocalStorageItem } from '../utils/getLocalStorageItem'
 

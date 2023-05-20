@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
 
 import { AuthContextType } from '../@types/auth'
-import { AuthContext } from '../context/AuthProvider'
-
 import { MessengerContextType } from '../@types/messenger'
+
+import { AuthContext } from '../context/AuthProvider'
 import { MessengerContext } from '../context/MessengerProvider'
 
 import AddChatContainer from './AddChatContainer'

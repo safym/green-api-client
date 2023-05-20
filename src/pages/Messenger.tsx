@@ -2,9 +2,11 @@ import React, { useContext, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { AuthContextType } from '../@types/auth'
+
 import { AuthContext } from '../context/AuthProvider'
-import MessengerContainer from '../containers/MessengerContainer'
 import MessengerProvider from '../context/MessengerProvider'
+
+import MessengerContainer from '../containers/MessengerContainer'
 
 const Messenger = () => {
   const { instance, setInstance } = useContext(AuthContext) as AuthContextType

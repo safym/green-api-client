@@ -6,7 +6,7 @@ export const MessengerContext = createContext<MessengerContextType | undefined>(
   undefined
 )
 
-const AuthProvider: React.FC<any> = ({ children }) => {
+const MessengerProvider: React.FC<any> = ({ children }) => {
   const [chatList, setChatList] = useState<ChatItem[]>([])
   const [currentChat, setCurrentChat] = useState<ChatItem>({
     phoneNumber: '',
@@ -18,7 +18,6 @@ const AuthProvider: React.FC<any> = ({ children }) => {
 
     if (isChatExists) return
 
-    // setChatList([...chatList, newChat])
     setChatList((prevChatList) => ([
       ...prevChatList,
       newChat,
@@ -40,4 +39,4 @@ const AuthProvider: React.FC<any> = ({ children }) => {
   )
 }
 
-export default AuthProvider
+export default MessengerProvider

@@ -1,11 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react'
 
 import { Instance, AuthContextType } from '../@types/auth'
-import { AuthContext } from '../context/AuthProvider'
 import { getStateInstance } from '../api/api'
-import { cleanSpecialChar } from '../utils/cleanSpecialChar'
+
+import { AuthContext } from '../context/AuthProvider'
+
 import Input from '../components/Input'
 import Button from '../components/Button'
+
+import { cleanSpecialChar } from '../utils/cleanSpecialChar'
 import { setLocalStorageItem } from '../utils/setLocalStorageItem'
 import { getLocalStorageItem } from '../utils/getLocalStorageItem'
 
