@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { AuthContextType } from '../@types/auth'
 import { AuthContext } from '../context/AuthProvider'
 import MessengerContainer from '../containers/MessengerContainer'
+import MessengerProvider from '../context/MessengerProvider'
 
 const Messenger = () => {
-  const { instance, setAuth } = useContext(AuthContext) as AuthContextType
+  const { instance, setInstance } = useContext(AuthContext) as AuthContextType
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -19,7 +20,10 @@ const Messenger = () => {
   return (
     <div>
       <h1>Messenger page</h1>
-      <MessengerContainer />
+      <MessengerProvider>
+        <MessengerContainer />
+      </MessengerProvider>
+
     </div>
   )
 }
