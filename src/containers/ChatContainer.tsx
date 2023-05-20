@@ -86,7 +86,7 @@ const ChatContainer = () => {
   }, [newMessage])
 
   // Сброс formData.message и обновление formData.chatId при изменении currentChat
-  // Cброс newMessage
+  // Cброс newMessage и idMessage
   useEffect(() => {
     setFormData((prevData) => ({
       ...prevData,
@@ -94,6 +94,7 @@ const ChatContainer = () => {
       chatId: currentChat.chatId,
     }))
     setNewMessage({ ...messageInitialState })
+    setIdMessage('')
   }, [currentChat])
 
   return (
