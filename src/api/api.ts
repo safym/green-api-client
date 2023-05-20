@@ -1,4 +1,5 @@
 import { Instance } from '../@types/auth'
+import { Message } from '../@types/chat'
 
 // Авторизация пользователя по idInstance и apiTokenInstance
 export const getStateInstance = async ({ idInstance, token }: Instance) => {
@@ -45,12 +46,24 @@ export const checkWhatsapp = async (
 }
 
 // Отправить сообщение
-export const sendMessage = async () => {
+export const sendMessage = async (
+  { idInstance, token }: Instance,
+  data: Message
+) => {
   try {
-    // TODO: request to api
+    console.log(idInstance, token, data)
+
+    const response = await fetch(
+      `https://api.green-api.com/waInstance${idInstance}/SendMessage/${token}`,
+      {
+        method: 'POST',
+        body: JSON.stringify(data),
+      }
+    )
+
+    return await response.json()
   } catch (error) {
     console.error('Ошибка при получении отправке сообщения:', error)
-    throw error
   }
 }
 
