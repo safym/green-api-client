@@ -7,6 +7,7 @@ import { cleanSpecialChar } from '../utils/cleanSpecialChar'
 import Input from '../components/Input'
 import Button from '../components/Button'
 import { setLocalStorageItem } from '../utils/setLocalStorageItem'
+import { getLocalStorageItem } from '../utils/getLocalStorageItem'
 
 const AuthContainer: React.FC = () => {
   // Данные instance контекста авторизации
@@ -29,8 +30,8 @@ const AuthContainer: React.FC = () => {
     const { name, value } = event.target
     const clearValue = cleanSpecialChar(value)
 
-    setFormData((prevCount) => ({
-      ...prevCount,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: clearValue,
     }))
   }
@@ -44,7 +45,7 @@ const AuthContainer: React.FC = () => {
     setFormData({ idInstance: '', token: '', isAuth: false })
   }
 
-  // Выполнение запроса к апи с данными для авторизации и обработка результата
+  // Выполнение запроса к api с данными для авторизации и обработка результата
   useEffect(() => {
     if (!formIsSubmit) return
 
@@ -74,8 +75,9 @@ const AuthContainer: React.FC = () => {
     setformIsSubmit(false)
   }, [instance])
 
+  // Загрузка данных авторизации, если они есть в LocalStorage
   useEffect(() => {
-    const instanceDataString = localStorage.getItem('instance')
+    const instanceDataString = getLocalStorageItem('instance')
 
     if (instanceDataString) {
       const instanceData = JSON.parse(instanceDataString)
