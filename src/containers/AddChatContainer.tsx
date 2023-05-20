@@ -16,7 +16,7 @@ import { setLocalStorageItem } from '../utils/setLocalStorageItem'
 import { getLocalStorageItem } from '../utils/getLocalStorageItem'
 
 const AddChatContainer: React.FC = () => {
-  const initialState = {
+  const chatInitialState = {
     phoneNumber: '',
     chatId: '',
   }
@@ -26,9 +26,9 @@ const AddChatContainer: React.FC = () => {
     MessengerContext
   ) as MessengerContextType
 
-  const [formData, setFormData] = useState<ChatItem>({ ...initialState })
+  const [formData, setFormData] = useState<ChatItem>({ ...chatInitialState })
 
-  const [newChat, setNewChat] = useState<ChatItem>({ ...initialState })
+  const [newChat, setNewChat] = useState<ChatItem>({ ...chatInitialState })
 
   const [formIsSubmit, setformIsSubmit] = useState<boolean>(false)
   const [existsWhatsapp, setExistsWhatsapp] = useState<boolean>(false)
@@ -36,7 +36,7 @@ const AddChatContainer: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   // Обработчик ввода для input
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
     const clearValue = cleanDigits(value)
     const chatId = getChatId(clearValue)
@@ -54,7 +54,7 @@ const AddChatContainer: React.FC = () => {
 
     setformIsSubmit(true)
     setNewChat({ ...formData })
-    setFormData({ ...initialState })
+    setFormData({ ...chatInitialState })
   }
 
   // Выполнение запроса к api для проверки наличия Whatsapp по номеру и обработка результата
@@ -75,6 +75,7 @@ const AddChatContainer: React.FC = () => {
 
       setExistsWhatsapp(response.existsWhatsapp)
 
+      setformIsSubmit(false)
       setIsLoading(false)
     }
 
@@ -121,7 +122,7 @@ const AddChatContainer: React.FC = () => {
         type="text"
         name="phoneNumber"
         value={formData.phoneNumber}
-        onChange={handleInputChange}
+        onChange={handleChange}
         required
       />
       <Button type={'submit'}>{isLoading ? 'Loading...' : 'Add chat'}</Button>
