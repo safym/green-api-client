@@ -20,7 +20,7 @@ const AuthContainer: React.FC = () => {
   // Состояние для управления запросами к api в useEffect
   const [formIsSubmit, setformIsSubmit] = useState<boolean>(false)
   // Состояние ошибки при авторизации
-  const [authError, setAuthError] = useState<boolean>(false)
+  const [error, setError] = useState<boolean>(false)
   // Состояние процесса выполнения запроса
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -37,11 +37,10 @@ const AuthContainer: React.FC = () => {
 
   // Обработчик submit для form
   const handleSubmit = async (e: React.FormEvent) => {
-    setformIsSubmit(true)
     e.preventDefault()
 
+    setformIsSubmit(true)
     setInstance(formData)
-
     setFormData({ idInstance: '', token: '', isAuth: false })
   }
 
@@ -61,17 +60,18 @@ const AuthContainer: React.FC = () => {
 
         setInstance(newInstance)
         setLocalStorageItem('instance', newInstance)
-        setAuthError(false)
+        setError(false)
       } else {
         setInstance({ ...instance, isAuth: false })
-        setAuthError(true)
+        setError(true)
       }
 
-      setformIsSubmit(false)
       setIsLoading(false)
     }
 
     fetchApi()
+
+    setformIsSubmit(false)
   }, [instance])
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const AuthContainer: React.FC = () => {
       <p>ID: {instance.idInstance}</p>
       <p>Token: {instance.token}</p>
       <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p>
-      <p>{authError && 'Ошибка авторизации'}</p>
+      <p>{error && 'Ошибка авторизации'}</p>
 
       <form onSubmit={handleSubmit}>
         <Input
