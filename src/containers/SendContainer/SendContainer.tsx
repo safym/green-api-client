@@ -1,14 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-import { ChatItem, MessengerContextType } from '../@types/messenger'
-import { Message } from '../@types/chat'
-import { AuthContextType } from '../@types/auth'
+import { ChatItem, MessengerContextType } from '../../@types/messenger'
+import { Message } from '../../@types/chat'
+import { AuthContextType } from '../../@types/auth'
 
-import { sendMessage } from '../api/api'
+import { sendMessage } from '../../api/api'
 
-import { AuthContext } from '../context/AuthProvider'
-import { MessengerContext } from '../context/MessengerProvider'
-import Button from '../components/Button/Button'
+import { AuthContext } from '../../context/AuthProvider'
+import { MessengerContext } from '../../context/MessengerProvider'
+import Button from '../../components/Button/Button'
+
+import { AiOutlineSend } from 'react-icons/ai'
+
+import styles from './SendContainer.module.scss'
+import Textarea from '../../components/Textarea/Textarea'
 
 const SendContainer: React.FC = () => {
   const messageInitialState = {
@@ -97,17 +102,18 @@ const SendContainer: React.FC = () => {
 
   return (
     <div>
-      <h1>CHAT SEND: {currentChat.phoneNumber}</h1>
-
-      <p>formData: {JSON.stringify(formData)}</p>
+      {/* Для отладки */}
+      {/* <p>formData: {JSON.stringify(formData)}</p>
       <p>newMessage: {JSON.stringify(newMessage)}</p>
       <p>error: {error && 'Ошибка отправки сообщения'}</p>
-      <p>idMessage: {idMessage}</p>
+      <p>idMessage: {idMessage}</p> */}
 
       {currentChat.chatId && (
-        <form onSubmit={handleSubmit}>
-          <textarea name="message" value={formData.message} onChange={handleChange} required />
-          <Button type="submit" isLoading={false}>Send</Button>
+        <form onSubmit={handleSubmit} className={styles.sendForm}>
+          <Textarea name={"message"} value={formData.message} onChange={handleChange} required placeholder={'Enter a message...'} />
+          <button type="submit" className={styles.sendButton}>
+            <AiOutlineSend className={styles.sendIcon}/>
+          </button>
         </form>
       )}
     </div>

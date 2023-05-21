@@ -1,0 +1,23 @@
+@import '../../styles/index.scss';
+
+.sendForm {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  background-color: $color-gunmetal;
+  z-index: 3;
+}
+
+.sendButton {
+  padding: 20px;
+  .sendIcon {
+    color: rgba($color-white, 0.5);
+    font-size: 30px;
+    transition: color ease-out 0.2s;
+  }
+
+  &:hover .sendIcon{
+    color: rgba($color-white, 0.7);
+  }
+}
