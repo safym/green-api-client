@@ -4,8 +4,6 @@ import { MessageItem } from '../@types/chat'
 // Авторизация пользователя по idInstance и apiTokenInstance
 export const getStateInstance = async ({ idInstance, token }: Instance) => {
   try {
-    console.log(idInstance, token)
-
     const response = await fetch(`https://api.green-api.com/waInstance${idInstance}/getStateInstance/${token}`, {
       method: 'GET',
     })
@@ -19,8 +17,6 @@ export const getStateInstance = async ({ idInstance, token }: Instance) => {
 // Проверить пользователя Whatsapp по номеру телефона
 export const checkWhatsapp = async ({ idInstance, token }: Instance, phoneNumber: string) => {
   try {
-    console.log(idInstance, token, phoneNumber)
-
     const data = {
       phoneNumber,
     }
@@ -39,8 +35,6 @@ export const checkWhatsapp = async ({ idInstance, token }: Instance, phoneNumber
 // Отправить сообщение
 export const sendMessage = async ({ idInstance, token }: Instance, data: MessageItem) => {
   try {
-    console.log(idInstance, token, data)
-
     const response = await fetch(`https://api.green-api.com/waInstance${idInstance}/SendMessage/${token}`, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -55,8 +49,6 @@ export const sendMessage = async ({ idInstance, token }: Instance, data: Message
 // Получить входящее уведомление с текстом сообщения
 export const receiveNotification = async ({ idInstance, token }: Instance) => {
   try {
-    console.log(idInstance, token)
-
     const response = await fetch(`https://api.green-api.com/waInstance${idInstance}/ReceiveNotification/${token}`, {
       method: 'GET',
     })
@@ -70,8 +62,6 @@ export const receiveNotification = async ({ idInstance, token }: Instance) => {
 // Удалить входящее уведомление
 export const deleteNotification = async ({ idInstance, token }: Instance, receiptId: number) => {
   try {
-    console.log(idInstance, token, receiptId)
-
     const response = await fetch(
       `https://api.green-api.com/waInstance${idInstance}/DeleteNotification/${token}/${receiptId}`,
       {

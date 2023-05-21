@@ -8,7 +8,6 @@ import { RiUserFill } from 'react-icons/ri'
 
 import styles from './ChatPreview.module.scss'
 
-
 interface Props {
   chatItem: ChatItem
   selected: boolean

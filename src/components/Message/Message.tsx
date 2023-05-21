@@ -1,5 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
+
 import { formatTimestamp } from '../../utils/formatTimestamp'
 
 import { GroupedNotifications } from '../../@types/notification'
@@ -11,8 +12,6 @@ interface Props {
 }
 
 const Message: React.FC<Props> = ({ value, ...props }) => {
-  console.log(value)
-
   const typeNotification = value.body.typeWebhook === 'incomingMessageReceived' ? 'incoming' : 'outgoing'
   const typeMessage = value.body.messageData.typeMessage
 

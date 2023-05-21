@@ -26,9 +26,10 @@ const ChatContainer: React.FC = () => {
   const { notifications, addNotification, groupedNotifications } = useContext(
     NotificationContext
   ) as NotificationContextType
-
+   // Отфильтрованные уведомления для текущего чата
   const [chatNotifications, setChatNotifications] = useState<GroupedNotifications[]>([])
 
+  // Фильтровать список уведомлений по текущему chatId
   const filterNotificationsByChatId = (groupedNotifications: GroupedNotifications[], chatId: string) => {
     if (!groupedNotifications.length) return
 
@@ -50,18 +51,6 @@ const ChatContainer: React.FC = () => {
       <div className={styles.header}>
         <span className={styles.phoneNumber}>{formatPhoneNumber(currentChat.phoneNumber)}</span>
       </div>
-
-      {/* Для отладки */}
-      {/* <p>filtered notifications here</p>
-      <h4>FILTERED:</h4>
-      <p>{JSON.stringify(chatNotifications)}</p>
-      <h4>ALL:</h4>
-      {groupedNotifications.map((notification, index) => (
-        <p key={index}>
-          <small>{JSON.stringify(notification)}</small>
-        </p>
-      ))} */}
-
       <div className={styles.messagesWrapper}>
         <div className={styles.messages}>
           {chatNotifications?.map((notification, index) => (
@@ -69,7 +58,6 @@ const ChatContainer: React.FC = () => {
           ))}
         </div>
       </div>
-
       {!currentChat.chatId && (
         <div className={styles.placeholder}>
           <FaRegSmileWink className={styles.icon} />

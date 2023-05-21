@@ -68,25 +68,6 @@ const MessengerContainer: React.FC = () => {
 
   return (
     <div className={styles.messengerContainer}>
-      {/* Для отладки */}
-      <div className={styles.test}>
-        {/* <h2>🍎 Auth context data</h2>
-        <p>ID: {instance.idInstance}</p>
-        <p>Token: {instance.token}</p>
-        <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p>
-
-        <h2>🥭 Messenger context data</h2>
-        <p>ChatList: {JSON.stringify(chatList)}</p>
-        <p>CurrentChat: {JSON.stringify(currentChat)}</p>
-
-        <h2>🍆 NOTIFICATIONS:</h2>
-        {notifications.map((notification, index) => (
-          <p key={index}>
-            <small>{JSON.stringify(notification)}</small>
-          </p>
-        ))} */}
-      </div>
-
       <aside className={styles.sidebar}>
         <AddChatContainer />
         <ChatListContainer />

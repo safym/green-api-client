@@ -13,6 +13,7 @@ const Auth: React.FC = () => {
   const { instance } = useContext(AuthContext) as AuthContextType
   const navigate = useNavigate()
 
+  // Навигация на /messenger, если пользователь авторизован
   useEffect(() => {
     if (instance.isAuth) {
       navigate('/messenger')

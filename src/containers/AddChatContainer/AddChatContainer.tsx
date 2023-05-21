@@ -117,10 +117,6 @@ const AddChatContainer: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.addChat}>
-      {/* Для отладки */}
-      {/* <p>formData: {JSON.stringify(formData)}</p>
-      <p>newChat: {JSON.stringify(newChat)}</p> */}
-
       <div className={styles.container}>
         <div className={styles.inputWrapper}>
           <Input

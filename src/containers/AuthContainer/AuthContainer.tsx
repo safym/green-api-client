@@ -96,11 +96,6 @@ const AuthContainer: React.FC = () => {
 
   return (
     <>
-      {/* Для отладки */}
-      {/* <p>ID: {instance.idInstance}</p>
-      <p>Token: {instance.token}</p>
-      <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p> */}
-
       {error && <p className={styles.error}>Authorization error</p>}
 
       <form onSubmit={handleSubmit} className={styles.form}>

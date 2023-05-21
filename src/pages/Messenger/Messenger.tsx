@@ -9,12 +9,13 @@ import NotificationProvider from '../../context/NotificationProvider'
 
 import MessengerContainer from '../../containers/MessengerContainer/MessengerContainer'
 
-import styles from "./Messenger.module.scss"
+import styles from './Messenger.module.scss'
 
 const Messenger: React.FC = () => {
   const { instance } = useContext(AuthContext) as AuthContextType
   const navigate = useNavigate()
 
+  // Навигация на / (страницу авторизации), если пользователь не авторизован
   useEffect(() => {
     if (!instance.isAuth) {
       navigate('/')

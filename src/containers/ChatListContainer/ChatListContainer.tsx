@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import { ChatItem, MessengerContextType } from '../../@types/messenger'
+import { MessengerContextType } from '../../@types/messenger'
 
 import { MessengerContext } from '../../context/MessengerProvider'
 

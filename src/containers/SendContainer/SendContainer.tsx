@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-import { ChatItem, MessengerContextType } from '../../@types/messenger'
+import { MessengerContextType } from '../../@types/messenger'
 import { MessageItem } from '../../@types/chat'
 import { AuthContextType } from '../../@types/auth'
 
@@ -8,7 +8,6 @@ import { sendMessage } from '../../api/api'
 
 import { AuthContext } from '../../context/AuthProvider'
 import { MessengerContext } from '../../context/MessengerProvider'
-import Button from '../../components/Button/Button'
 
 import { AiOutlineSend } from 'react-icons/ai'
 
@@ -102,13 +101,7 @@ const SendContainer: React.FC = () => {
   }, [currentChat])
 
   return (
-    <div>
-      {/* Для отладки */}
-      {/* <p>formData: {JSON.stringify(formData)}</p>
-      <p>newMessage: {JSON.stringify(newMessage)}</p>
-      <p>error: {error && 'Ошибка отправки сообщения'}</p>
-      <p>idMessage: {idMessage}</p> */}
-
+    <>
       {currentChat.chatId && (
         <form onSubmit={handleSubmit} className={styles.sendForm}>
           <Textarea
@@ -123,7 +116,7 @@ const SendContainer: React.FC = () => {
           </button>
         </form>
       )}
-    </div>
+    </>
   )
 }
 
