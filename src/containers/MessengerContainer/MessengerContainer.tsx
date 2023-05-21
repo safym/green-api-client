@@ -9,8 +9,8 @@ import { AuthContext } from '../../context/AuthProvider'
 import { MessengerContext } from '../../context/MessengerProvider'
 import { NotificationContext } from '../../context/NotificationProvider'
 
-import AddChatContainer from '../AddChatContainer'
-import ChatListContainer from '../ChatListContainer'
+import AddChatContainer from '../AddChatContainer/AddChatContainer'
+import ChatListContainer from '../ChatListContainer/ChatListContainer'
 import SendContainer from '../SendContainer'
 import ChatContainer from '../ChatContainer'
 
