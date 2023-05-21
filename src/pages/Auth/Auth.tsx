@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { AuthContextType } from '../../@types/auth'
@@ -8,7 +8,7 @@ import AuthContainer from '../../containers/Auth/AuthContainer'
 import styles from "./Auth.module.scss"
 import { ImWhatsapp } from 'react-icons/im';
 
-const Auth = () => {
+const Auth: React.FC = () => {
   const { instance } = useContext(AuthContext) as AuthContextType
   const navigate = useNavigate()
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { ChatItem, MessengerContextType } from '../@types/messenger'
 import { Message } from '../@types/chat'
@@ -10,7 +10,7 @@ import { AuthContext } from '../context/AuthProvider'
 import { MessengerContext } from '../context/MessengerProvider'
 import Button from '../components/Button/Button'
 
-const SendContainer = () => {
+const SendContainer: React.FC = () => {
   const messageInitialState = {
     chatId: '',
     message: '',

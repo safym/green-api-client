@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { ChatItem, MessengerContextType } from '../@types/messenger'
 import { Message } from '../@types/chat'
@@ -10,7 +10,7 @@ import { MessengerContext } from '../context/MessengerProvider'
 import { NotificationContext } from '../context/NotificationProvider'
 import { Notification, NotificationContextType, GroupedNotifications } from '../@types/notification'
 
-const ChatContainer = () => {
+const ChatContainer: React.FC = () => {
   // Данные контекста авторизации
   const { instance, setInstance } = useContext(AuthContext) as AuthContextType
   // Данные контекста мессенджера

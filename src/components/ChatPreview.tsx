@@ -1,3 +1,4 @@
+import React from 'react'
 import { ChatItem } from '../@types/messenger'
 
 interface Props {
@@ -5,7 +6,7 @@ interface Props {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-const ChatPreview = ({ chatItem, onClick, ...props }: Props) => {
+const ChatPreview: React.FC<Props>  = ({ chatItem, onClick, ...props }) => {
   return <a onClick={onClick}>{chatItem.phoneNumber}</a>
 }
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './Input.module.scss'
 import cn from 'classnames'
 
@@ -10,7 +11,7 @@ interface Props {
   required: boolean
 }
 
-const Input = ({ type, name, value, onChange, required, placeholder, ...props }: Props) => {
+const Input: React.FC<Props>  = ({ type, name, value, onChange, required, placeholder, ...props }) => {
   return (
     <input
       className={styles.input}

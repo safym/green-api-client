@@ -1,6 +1,7 @@
+import React from 'react'
 import styles from './Loader.module.scss'
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
     <span className={styles.loader}></span>
   )

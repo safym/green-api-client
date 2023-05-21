@@ -1,8 +1,9 @@
+import React from 'react'
 import { Outlet, NavLink } from 'react-router-dom'
 
 import styles from './Layout.module.scss'
 
-const Layout = () => {
+const Layout: React.FC = () => {
   return (
     <div className={styles.layout}>
       <div className={styles.container}>
