@@ -1,6 +1,9 @@
 @import '../../styles/index.scss';
 
 .button {
+  @include flexCenter;
+  column-gap: 20px;
+  
   padding: 15px;
   width: 100%;
 
@@ -15,18 +18,28 @@
   font-weight: $font-weight-bold;
 
   transform: translate3d(0, 0, 0);
-  transition-duration: 0.35s;
   user-select: none;
+
+  &:disabled,
+  &[disabled],
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: rgba($color-green, 0.5);
+  }
 
   &:hover {
     background-color: darken($color-green, 5%);
+    transition-duration: 0.35s;
   }
 
   &:active {
     transform: translateY(2px);
+    transition-duration: 0.35s;
   }
 
   &:hover {
     box-shadow: rgba(39, 174, 96, 0.2) 0 6px 12px;
+    transition-duration: 0.35s;
   }
 }

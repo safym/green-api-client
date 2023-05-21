@@ -13,7 +13,7 @@ import { cleanSpecialChar } from '../../utils/cleanSpecialChar'
 import { setLocalStorageItem } from '../../utils/setLocalStorageItem'
 import { getLocalStorageItem } from '../../utils/getLocalStorageItem'
 
-import styles from "./Auth.module.scss"
+import styles from './Auth.module.scss'
 
 const AuthContainer: React.FC = () => {
   // Данные instance контекста авторизации
@@ -96,18 +96,39 @@ const AuthContainer: React.FC = () => {
 
   return (
     <>
-
       {/* Для отладки */}
       {/* <p>ID: {instance.idInstance}</p>
       <p>Token: {instance.token}</p>
       <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p> */}
 
-      {error && <p className={styles.error}>Ошибка авторизации</p>}
+      {error && <p className={styles.error}>Authorization error</p>}
 
       <form onSubmit={handleSubmit} className={styles.form}>
-        <Input type="text" name="idInstance" value={formData.idInstance} onChange={handleInputChange} placeholder='Instance ID' required />
-        <Input type="text" name="token" value={formData.token} onChange={handleInputChange} placeholder='API Token' required />
-        <Button type={'submit'}>{isLoading ? 'Loading...' : 'Login'}</Button>
+        <Input
+          type="text"
+          name="idInstance"
+          value={formData.idInstance}
+          onChange={handleInputChange}
+          placeholder="Instance ID"
+          required
+        />
+        <Input
+          type="text"
+          name="token"
+          value={formData.token}
+          onChange={handleInputChange}
+          placeholder="API Token"
+          required
+        />
+        <Button type={'submit'} isLoading={isLoading}>
+          Login
+        </Button>
+        <p className={styles.register}>
+          Not registered?{' '}
+          <a className={styles.link} href="https://console.green-api.com/auth/register" target="_blank">
+            Create an account
+          </a>
+        </p>
       </form>
     </>
   )

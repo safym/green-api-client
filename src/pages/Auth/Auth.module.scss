@@ -15,18 +15,12 @@ $offset:  30px;
 
 .logoWrapper {
   @include flexCenter;
-  flex-direction: row;
-  column-gap: 10px;
+
   padding-bottom: $offset;
   color: $color-green;
 
   .logo {
     font-size: 70px
-  }
-
-  .logoTitle {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
   }
 }
 

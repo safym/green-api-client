@@ -22,9 +22,8 @@ const Auth = () => {
     <div className={styles.auth}>
       <div className={styles.logoWrapper}>
         <ImWhatsapp className={styles.logo}/>
-        <h1 className={styles.logoTitle}>GREEN API</h1>
       </div>
-      <h1 className={styles.title}>Авторизация</h1>
+      <h1 className={styles.title}>Log In</h1>
       <AuthContainer />
     </div>
   )
