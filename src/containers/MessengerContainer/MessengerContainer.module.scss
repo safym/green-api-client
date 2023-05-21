@@ -1,7 +1,6 @@
 @import '../../styles/index.scss';
 
 $color-gunmetal-lighter: lighten($color-gunmetal, 5%);
-$border-shadow: rgba($color-gunmetal-lighter, 1) 0px 0px 0px 1px;;
 
 .messengerContainer {
   width: 100%;
@@ -9,13 +8,12 @@ $border-shadow: rgba($color-gunmetal-lighter, 1) 0px 0px 0px 1px;;
   display: flex;
 
   .sidebar {
-    min-width: 350px;
-    box-shadow: $border-shadow;
+    min-width: 450px;
+    border-right: $border;
   }
 
   .chat {
     flex: 1 1 auto;
     background-color: $color-gunmetal;
-    box-shadow: $border-shadow;
   }
 }
