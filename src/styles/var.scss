@@ -1,10 +1,11 @@
 // main colors
 $color-green: #00a884;
 $color-dark-green: darken(#00a884, 10%);
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 $color-black: #000000;
 $color-dark-blue: #0b141a;
 $color-red: #cc6b6b;
+$color-gunmetal: #233138;
 
 // specific colors
 $error-color: $color-red;
@@ -16,7 +17,7 @@ $bakground-color-light: $color-white;
 
 // text colors
 $text-color-light: $color-white;
-$text-color-dark: rgba($color-dark-blue, 0.80);
+$text-color-dark: rgba($color-dark-blue, 0.8);
 
 // font size
 $font-size-xl: 28px;
@@ -28,5 +29,3 @@ $font-size-s: 14px;
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 500;
-
-
