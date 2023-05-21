@@ -11,8 +11,11 @@ import { AuthContext } from '../../context/AuthProvider'
 import { MessengerContext } from '../../context/MessengerProvider'
 import { NotificationContext } from '../../context/NotificationProvider'
 
-import styles from './ChatContainer.module.scss'
 import Message from '../../components/Message/Message'
+
+import { FaRegSmileWink } from 'react-icons/fa'
+
+import styles from './ChatContainer.module.scss'
 
 const ChatContainer: React.FC = () => {
   // Данные контекста авторизации
@@ -64,6 +67,19 @@ const ChatContainer: React.FC = () => {
           <Message key={index} value={notification} />
         ))}
       </div>
+
+      {!currentChat.chatId && (
+        <div className={styles.placeholder}>
+          <FaRegSmileWink className={styles.icon}/>
+          <h1>WhatsApp Web client with Green API</h1>
+          <ol>
+            <li>☎️ Add new chat by a phone number</li>
+            <li>📨 Send a message</li>
+            <li>⏱️ Wait for 5 seconds.... (api interval 🥱)</li>
+            <li>✨ Watch magic happen</li>
+          </ol>
+        </div>
+      )}
     </div>
   )
 }
