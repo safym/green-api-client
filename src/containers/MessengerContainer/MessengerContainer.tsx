@@ -35,16 +35,11 @@ const MessengerContainer: React.FC = () => {
   // Id нового отправленного сообщения
   const [idMessage, setIdMessage] = useState<string>('')
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
-    setClickedButton(true)
-  }
-
   // Выполнение запроса к api для проверки наличия Whatsapp по номеру и обработка результата
   useEffect(() => {
-    if (!clickedButton) return
-
     const handleNotification = async () => {
+      if (isLoading) return
+
       setIsLoading(true)
 
       let responseReceive
@@ -67,13 +62,9 @@ const MessengerContainer: React.FC = () => {
       setIsLoading(false)
     }
 
-    handleNotification()
-
-    setClickedButton(false)
-
-    // const intervalId = setInterval(handleNotification, 5000);
-    // return () => clearInterval(intervalId);
-  }, [clickedButton])
+    const intervalId = setInterval(handleNotification, 5000)
+    return () => clearInterval(intervalId)
+  }, [])
 
   return (
     <div className={styles.messengerContainer}>
@@ -94,7 +85,6 @@ const MessengerContainer: React.FC = () => {
             <small>{JSON.stringify(notification)}</small>
           </p>
         ))} */}
-        <button onClick={handleClick}>{isLoading ? 'Lodading...' : 'load new messages'}</button>
       </div>
 
       <aside className={styles.sidebar}>
