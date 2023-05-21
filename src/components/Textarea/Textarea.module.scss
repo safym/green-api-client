@@ -1,0 +1,21 @@
+@import '../../styles/index.scss';
+
+.textarea {
+  background-color: lighten($color-gunmetal, 4%);
+  padding: 10px;
+  width: 100%;
+  resize: none;
+  border-radius: 10px;
+  border: lighten($color-gunmetal, 4%) 10px solid;
+
+  font-size: $font-size-m;
+  font-weight: 300;
+
+  &::placeholder {
+    color: rgba($color-white, 0.5);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
