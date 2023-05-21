@@ -11,8 +11,8 @@ import { NotificationContext } from '../../context/NotificationProvider'
 
 import AddChatContainer from '../AddChatContainer/AddChatContainer'
 import ChatListContainer from '../ChatListContainer/ChatListContainer'
-import SendContainer from '../SendContainer'
-import ChatContainer from '../ChatContainer'
+import SendContainer from '../SendContainer/SendContainer'
+import ChatContainer from '../ChatContainer/ChatContainer'
 
 import styles from './MessengerContainer.module.scss'
 
@@ -100,7 +100,9 @@ const MessengerContainer: React.FC = () => {
         <ChatListContainer />
       </aside>
       <div className={styles.chat}>
-        <ChatContainer />
+        <div className={styles.canvas}>
+          <ChatContainer />
+        </div>
         <SendContainer />
       </div>
     </div>
