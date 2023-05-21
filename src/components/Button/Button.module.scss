@@ -5,7 +5,9 @@
   width: 100%;
   padding: 15px;
 
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+
+       column-gap: 20px;
 
   border-radius: 5px;
   color: $text-color-light;
@@ -18,7 +20,10 @@
 
   transform: translate3d(0, 0, 0);
   transition-duration: 0.2s;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 
   &:disabled,
   &[disabled],

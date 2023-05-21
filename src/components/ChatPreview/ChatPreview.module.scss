@@ -23,7 +23,8 @@
 .wrapper {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   padding: 20px 10px;
 }
 
