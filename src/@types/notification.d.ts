@@ -45,9 +45,12 @@ export interface GroupedNotifications {
       senderName: string
     }
     messageData: {
-      typeMessage: 'textMessage'
-      textMessageData: {
+      typeMessage: 'textMessage' | 'extendedTextMessage'
+      textMessageData?: {
         textMessage: string
+      }
+      extendedTextMessageData?: {
+        text: string
       }
     }
     status?: string
