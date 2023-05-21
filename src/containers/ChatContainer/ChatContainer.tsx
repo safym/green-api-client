@@ -63,14 +63,16 @@ const ChatContainer: React.FC = () => {
       ))} */}
 
       <div className={styles.messagesWrapper}>
-        {chatNotifications?.map((notification, index) => (
-          <Message key={index} value={notification} />
-        ))}
+        <div className={styles.messages}>
+          {chatNotifications?.map((notification, index) => (
+            <Message key={index} value={notification} />
+          ))}
+        </div>
       </div>
 
       {!currentChat.chatId && (
         <div className={styles.placeholder}>
-          <FaRegSmileWink className={styles.icon}/>
+          <FaRegSmileWink className={styles.icon} />
           <h1>WhatsApp Web client with Green API</h1>
           <ol>
             <li>☎️ Add new chat by a phone number</li>

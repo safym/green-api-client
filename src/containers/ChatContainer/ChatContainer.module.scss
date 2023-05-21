@@ -7,11 +7,21 @@
 }
 
 .messagesWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.messages {
   box-sizing: border-box;
   position: relative;
-
-  padding-top: 75px;
+  
   max-height: 780px;
+  padding-bottom: 75px;
 
   z-index: 3;
   display: flex;
