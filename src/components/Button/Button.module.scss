@@ -1,0 +1,32 @@
+@import '../../styles/index.scss';
+
+.button {
+  padding: 15px;
+  width: 100%;
+
+  color: $text-color-light;
+  background-color: $color-green;
+
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+
+  font-size: $font-size-l;
+  font-weight: $font-weight-bold;
+
+  transform: translate3d(0, 0, 0);
+  transition-duration: 0.35s;
+  user-select: none;
+
+  &:hover {
+    background-color: darken($color-green, 5%);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:hover {
+    box-shadow: rgba(39, 174, 96, 0.2) 0 6px 12px;
+  }
+}

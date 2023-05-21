@@ -1,0 +1,36 @@
+@import "../../styles/index.scss";
+
+$offset:  30px;
+
+.auth {
+  padding: $offset;
+  position: relative;
+  z-index: 2;
+
+  color: $text-color-dark;
+  background-color: $bakground-color-light;
+  border-radius: 5px;
+  box-shadow: 0 17px 50px 0 rgb(11 20 26 / 19%), 0 12px 15px 0 rgb(11 20 26 / 24%);
+}
+
+.logoWrapper {
+  @include flexCenter;
+  flex-direction: row;
+  column-gap: 10px;
+  padding-bottom: $offset;
+  color: $color-green;
+
+  .logo {
+    font-size: 70px
+  }
+
+  .logoTitle {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: $offset;
+}

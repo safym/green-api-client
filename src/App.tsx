@@ -2,8 +2,8 @@ import React from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 
 import AuthProvider from './context/AuthProvider'
-import Layout from './pages/Layout'
-import Auth from './pages/Auth'
+import Layout from './pages/Layout/Layout'
+import Auth from './pages/Auth/Auth'
 import Messenger from './pages/Messenger'
 
 const App: React.FC = () => {

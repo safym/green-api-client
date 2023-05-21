@@ -8,8 +8,8 @@ import { checkWhatsapp } from '../api/api'
 import { AuthContext } from '../context/AuthProvider'
 import { MessengerContext } from '../context/MessengerProvider'
 
-import Button from '../components/Button'
-import Input from '../components/Input'
+import Button from '../components/Button/Button'
+import Input from '../components/Input/Input'
 
 import { cleanDigits } from '../utils/cleanDigits'
 import { getChatId } from '../utils/getChatId'

@@ -1,3 +1,5 @@
+import styles from './Button.module.scss'
+
 interface Props {
   type: 'submit' | 'reset'
   children?: string
@@ -6,7 +8,7 @@ interface Props {
 
 const Button = ({ type, children, onClick, ...props }: Props) => {
   return (
-    <button type={type} onClick={onClick}>
+    <button className={styles.button} type={type} onClick={onClick}>
       {children}
     </button>
   )

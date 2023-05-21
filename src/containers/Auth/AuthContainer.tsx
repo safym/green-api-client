@@ -1,17 +1,19 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import { Instance, AuthContextType } from '../@types/auth'
+import { Instance, AuthContextType } from '../../@types/auth'
 
-import { getStateInstance } from '../api/api'
+import { getStateInstance } from '../../api/api'
 
-import { AuthContext } from '../context/AuthProvider'
+import { AuthContext } from '../../context/AuthProvider'
 
-import Input from '../components/Input'
-import Button from '../components/Button'
+import Input from '../../components/Input/Input'
+import Button from '../../components/Button/Button'
 
-import { cleanSpecialChar } from '../utils/cleanSpecialChar'
-import { setLocalStorageItem } from '../utils/setLocalStorageItem'
-import { getLocalStorageItem } from '../utils/getLocalStorageItem'
+import { cleanSpecialChar } from '../../utils/cleanSpecialChar'
+import { setLocalStorageItem } from '../../utils/setLocalStorageItem'
+import { getLocalStorageItem } from '../../utils/getLocalStorageItem'
+
+import styles from "./Auth.module.scss"
 
 const AuthContainer: React.FC = () => {
   // Данные instance контекста авторизации
@@ -38,6 +40,8 @@ const AuthContainer: React.FC = () => {
       ...prevData,
       [name]: clearValue,
     }))
+
+    if (error) setError(false)
   }
 
   // Обработчик submit для form
@@ -92,14 +96,17 @@ const AuthContainer: React.FC = () => {
 
   return (
     <>
-      <p>ID: {instance.idInstance}</p>
-      <p>Token: {instance.token}</p>
-      <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p>
-      <p>{error && 'Ошибка авторизации'}</p>
 
-      <form onSubmit={handleSubmit}>
-        <Input type="text" name="idInstance" value={formData.idInstance} onChange={handleInputChange} required />
-        <Input type="text" name="token" value={formData.token} onChange={handleInputChange} required />
+      {/* Для отладки */}
+      {/* <p>ID: {instance.idInstance}</p>
+      <p>Token: {instance.token}</p>
+      <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p> */}
+
+      {error && <p className={styles.error}>Ошибка авторизации</p>}
+
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <Input type="text" name="idInstance" value={formData.idInstance} onChange={handleInputChange} placeholder='Instance ID' required />
+        <Input type="text" name="token" value={formData.token} onChange={handleInputChange} placeholder='API Token' required />
         <Button type={'submit'}>{isLoading ? 'Loading...' : 'Login'}</Button>
       </form>
     </>

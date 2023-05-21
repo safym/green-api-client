@@ -8,7 +8,7 @@ import { sendMessage } from '../api/api'
 
 import { AuthContext } from '../context/AuthProvider'
 import { MessengerContext } from '../context/MessengerProvider'
-import Button from '../components/Button'
+import Button from '../components/Button/Button'
 
 const SendContainer = () => {
   const messageInitialState = {
