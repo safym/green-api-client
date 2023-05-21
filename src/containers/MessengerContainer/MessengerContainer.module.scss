@@ -30,6 +30,7 @@ $color-gunmetal-lighter: lighten($color-gunmetal, 5%);
       content: ' ';
       display: block;
       position: absolute;
+      z-index: 1;
       left: 0;
       top: 0;
       width: 100%;
@@ -37,6 +38,10 @@ $color-gunmetal-lighter: lighten($color-gunmetal, 5%);
       opacity: 0.1;
       background-image: url("../../assets/chat-bg.png");
     }
-    
   }
+}
+
+.test {
+  position: absolute;
+  top: 400px;
 }

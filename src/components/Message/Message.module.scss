@@ -1,0 +1,58 @@
+@import '../../styles/index.scss';
+
+.message {
+  position: relative;
+  min-width: 300px;
+
+  padding: 15px 15px 30px 15px;
+  margin-bottom: 10px;
+
+  border-radius: 15px;
+  background-color: aqua;
+
+  &.outgoing {
+    align-self: flex-end;
+    margin-right: 20px;
+    background-color: $background-color-outgoing;
+
+    &:before {
+      content: '';
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 15px solid $background-color-outgoing;
+      border-right: 15px solid transparent;
+      border-top: 15px solid $background-color-outgoing;
+      border-bottom: 15px solid transparent;
+      right: -16px;
+      top: 0px;
+    }
+  }
+
+  &.incoming {
+    align-self: flex-start;
+    margin-left: 20px;
+    background-color: $background-color-incoming;
+
+    &:before {
+      content: '';
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 15px solid transparent;
+      border-right: 15px solid $background-color-incoming;
+      border-top: 15px solid $background-color-incoming;
+      border-bottom: 15px solid transparent;
+      left: -16px;
+      top: 0px;
+    }
+  }
+}
+
+.date {
+  position: absolute;
+  bottom: 7px;
+  right: 10px;
+  font-size: $font-size-s;
+  color: rgba($color-white, 0.5);
+}

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { formatPhoneNumber } from '../../utils/formatPhoneNumber'
 
 import { ChatItem, MessengerContextType } from '../../@types/messenger'
-import { Message } from '../../@types/chat'
+import { MessageItem } from '../../@types/chat'
 import { Notification, NotificationContextType, GroupedNotifications } from '../../@types/notification'
 import { AuthContextType } from '../../@types/auth'
 
@@ -12,6 +12,7 @@ import { MessengerContext } from '../../context/MessengerProvider'
 import { NotificationContext } from '../../context/NotificationProvider'
 
 import styles from './ChatContainer.module.scss'
+import Message from '../../components/Message/Message'
 
 const ChatContainer: React.FC = () => {
   // Данные контекста авторизации
@@ -48,7 +49,7 @@ const ChatContainer: React.FC = () => {
       </div>
 
       {/* Для отладки */}
-      <p>filtered notifications here</p>
+      {/* <p>filtered notifications here</p>
       <h4>FILTERED:</h4>
       <p>{JSON.stringify(chatNotifications)}</p>
       <h4>ALL:</h4>
@@ -56,9 +57,13 @@ const ChatContainer: React.FC = () => {
         <p key={index}>
           <small>{JSON.stringify(notification)}</small>
         </p>
-      ))}
+      ))} */}
 
-
+      <div className={styles.messagesWrapper}>
+        {chatNotifications?.map((notification, index) => (
+          <Message key={index} value={notification} />
+        ))}
+      </div>
     </div>
   )
 }

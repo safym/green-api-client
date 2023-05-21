@@ -1,21 +1,46 @@
 @import '../../styles/index.scss';
 
 .chat {
+  position: relative;
+}
 
+.messagesWrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  max-height: 800px;
+  flex-direction: column;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: lighten($color-gunmetal, 5%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: lighten($color-gunmetal, 15%);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: lighten($color-gunmetal, 20%);
+  }
 }
 
 .header {
   height: 75px;
   padding: 0 40px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 3;
-  
+
   display: flex;
   justify-content: start;
   align-items: center;
 
-  background-color: $color-gunmetal
-  // .phoneNumber {
-
-  // }
+  background-color: $color-gunmetal;
 }

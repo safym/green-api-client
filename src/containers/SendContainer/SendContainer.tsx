@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 import { ChatItem, MessengerContextType } from '../../@types/messenger'
-import { Message } from '../../@types/chat'
+import { MessageItem } from '../../@types/chat'
 import { AuthContextType } from '../../@types/auth'
 
 import { sendMessage } from '../../api/api'
@@ -26,8 +26,8 @@ const SendContainer: React.FC = () => {
   // Данные контекста мессенджера
   const { chatList, currentChat, setCurrentChat } = useContext(MessengerContext) as MessengerContextType
 
-  const [formData, setFormData] = useState<Message>({ ...messageInitialState })
-  const [newMessage, setNewMessage] = useState<Message>({
+  const [formData, setFormData] = useState<MessageItem>({ ...messageInitialState })
+  const [newMessage, setNewMessage] = useState<MessageItem>({
     ...messageInitialState,
   })
 

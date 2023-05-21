@@ -78,22 +78,24 @@ const MessengerContainer: React.FC = () => {
   return (
     <div className={styles.messengerContainer}>
       {/* Для отладки */}
-      {/* <h2>🍎 Auth context data</h2>
-      <p>ID: {instance.idInstance}</p>
-      <p>Token: {instance.token}</p>
-      <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p>
+      <div className={styles.test}>
+        {/* <h2>🍎 Auth context data</h2>
+        <p>ID: {instance.idInstance}</p>
+        <p>Token: {instance.token}</p>
+        <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p>
 
-      <h2>🥭 Messenger context data</h2>
-      <p>ChatList: {JSON.stringify(chatList)}</p>
-      <p>CurrentChat: {JSON.stringify(currentChat)}</p>
+        <h2>🥭 Messenger context data</h2>
+        <p>ChatList: {JSON.stringify(chatList)}</p>
+        <p>CurrentChat: {JSON.stringify(currentChat)}</p>
 
-      <h2>🍆 NOTIFICATIONS:</h2>
-      {notifications.map((notification, index) => (
-        <p key={index}>
-          <small>{JSON.stringify(notification)}</small>
-        </p>
-      ))}
-      <button onClick={handleClick}>{isLoading ? 'Lodading...' : 'load new messages'}</button> */}
+        <h2>🍆 NOTIFICATIONS:</h2>
+        {notifications.map((notification, index) => (
+          <p key={index}>
+            <small>{JSON.stringify(notification)}</small>
+          </p>
+        ))} */}
+        <button onClick={handleClick}>{isLoading ? 'Lodading...' : 'load new messages'}</button>
+      </div>
 
       <aside className={styles.sidebar}>
         <AddChatContainer />
