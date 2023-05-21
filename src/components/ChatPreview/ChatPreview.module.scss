@@ -1,0 +1,49 @@
+@import '../../styles/index.scss';
+
+.chatPreview {
+  cursor: pointer;
+
+  border-top: $border;
+
+  &:last-child {
+    border-bottom: $border;
+  }
+
+  &:hover {
+    background-color: lighten($background-color-dark, 2%);
+  }
+
+  &.selected {
+    background-color: lighten($background-color-dark, 4%);
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  padding: 20px 10px;
+}
+
+.avatar {
+  @include flexCenter;
+  position: relative;
+  overflow: hidden;
+
+  width: 60px;
+  height: 60px;
+
+  color: lighten($text-color-dark, 70%);
+  background-color: rgba($color-white, 0.2);
+  border-radius: 50%;
+
+  .icon {
+    position: absolute;
+    bottom: -5px;
+    font-size: 50px;
+  }
+}
+
+.phoneNumber {
+  font-size: $font-size-l;
+}
