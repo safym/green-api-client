@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { AuthContextType } from '../../@types/auth'
 import { AuthContext } from '../../context/AuthProvider'
-import AuthContainer from '../../containers/Auth/AuthContainer'
+import AuthContainer from '../../containers/AuthContainer/AuthContainer'
 
 import styles from "./Auth.module.scss"
 import { ImWhatsapp } from 'react-icons/im';

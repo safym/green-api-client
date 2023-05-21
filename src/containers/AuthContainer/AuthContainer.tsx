@@ -13,7 +13,7 @@ import { cleanSpecialChar } from '../../utils/cleanSpecialChar'
 import { setLocalStorageItem } from '../../utils/setLocalStorageItem'
 import { getLocalStorageItem } from '../../utils/getLocalStorageItem'
 
-import styles from './Auth.module.scss'
+import styles from './AuthContainer.module.scss'
 
 const AuthContainer: React.FC = () => {
   // Данные instance контекста авторизации
