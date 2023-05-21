@@ -1,5 +1,5 @@
 import { Instance } from '../@types/auth'
-import { Message } from '../@types/chat'
+import { MessageItem } from '../@types/chat'
 
 // Авторизация пользователя по idInstance и apiTokenInstance
 export const getStateInstance = async ({ idInstance, token }: Instance) => {
@@ -37,7 +37,7 @@ export const checkWhatsapp = async ({ idInstance, token }: Instance, phoneNumber
 }
 
 // Отправить сообщение
-export const sendMessage = async ({ idInstance, token }: Instance, data: Message) => {
+export const sendMessage = async ({ idInstance, token }: Instance, data: MessageItem) => {
   try {
     console.log(idInstance, token, data)
 
