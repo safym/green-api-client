@@ -62,8 +62,8 @@ const MessengerContainer: React.FC = () => {
       setIsLoading(false)
     }
 
-    const intervalId = setInterval(handleNotification, 5000)
-    return () => clearInterval(intervalId)
+    // const intervalId = setInterval(handleNotification, 5000)
+    // return () => clearInterval(intervalId)
   }, [])
 
   return (

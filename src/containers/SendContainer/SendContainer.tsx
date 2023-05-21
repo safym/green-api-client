@@ -14,6 +14,7 @@ import { AiOutlineSend } from 'react-icons/ai'
 
 import styles from './SendContainer.module.scss'
 import Textarea from '../../components/Textarea/Textarea'
+import Loader from '../../components/Loader/Loader'
 
 const SendContainer: React.FC = () => {
   const messageInitialState = {
@@ -110,9 +111,15 @@ const SendContainer: React.FC = () => {
 
       {currentChat.chatId && (
         <form onSubmit={handleSubmit} className={styles.sendForm}>
-          <Textarea name={"message"} value={formData.message} onChange={handleChange} required placeholder={'Enter a message...'} />
+          <Textarea
+            name={'message'}
+            value={formData.message}
+            onChange={handleChange}
+            required
+            placeholder={'Enter a message...'}
+          />
           <button type="submit" className={styles.sendButton}>
-            <AiOutlineSend className={styles.sendIcon}/>
+            {isLoading ? <Loader /> : <AiOutlineSend className={styles.sendIcon} />}
           </button>
         </form>
       )}
