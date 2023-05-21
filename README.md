@@ -22,18 +22,17 @@
 
 <h2 id="gh-pages">🔗 Github Pages</h2>
 
-[Live link deploy](https://safym.github.io/green-api-client/)
+[Live link deploy]()
 
 <h2 id="screenshots">📸 Screenshots</h2>
 
 ### 🖥️ Desktop
 <p align="center">
-    <img height="230px" src="https://user-images.githubusercontent.com/99616798/231590186-6d09b904-4132-471b-b4b6-37bfb1414d71.png" />
-    <img height="230px" src="https://user-images.githubusercontent.com/99616798/231590186-6d09b904-4132-471b-b4b6-37bfb1414d71.png" />
+    <img height="250px" src="https://github.com/safym/green-api-client/assets/99616798/8129266a-02f2-4a69-aa58-570662ace554" />
+    <img height="250px" src="https://github.com/safym/green-api-client/assets/99616798/dc62370b-c3ae-49c7-8e0c-d58f0fbb1861" />
 </p>
 <p align="center">
-    <img height="230px" src="https://user-images.githubusercontent.com/99616798/231590186-6d09b904-4132-471b-b4b6-37bfb1414d71.png" />
-    <img height="230px" src="https://user-images.githubusercontent.com/99616798/231590186-6d09b904-4132-471b-b4b6-37bfb1414d71.png" />
+    <img height="500px" src="https://github.com/safym/green-api-client/assets/99616798/d8b0897c-89c2-4921-9f77-803db1c5afee" />
 </p>
 
 <h2 id="commands">🛠 Commands</h2>
