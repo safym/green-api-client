@@ -1,9 +1,13 @@
 @import '../../styles/index.scss';
 
 .addChat {
-  
+  position: relative;
+  z-index: 3;
+  background-color: $color-gunmetal;
+
   .container {
     padding: 10px;
+    height: 75px;
 
     display: flex;
     align-items: center;
