@@ -1,18 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import { AuthContextType } from '../@types/auth'
-import { MessengerContextType } from '../@types/messenger'
+import { deleteNotification, receiveNotification } from '../../api/api'
+import { AuthContextType } from '../../@types/auth'
+import { MessengerContextType } from '../../@types/messenger'
+import { NotificationContextType } from '../../@types/notification'
 
-import { AuthContext } from '../context/AuthProvider'
-import { MessengerContext } from '../context/MessengerProvider'
+import { AuthContext } from '../../context/AuthProvider'
+import { MessengerContext } from '../../context/MessengerProvider'
+import { NotificationContext } from '../../context/NotificationProvider'
 
-import AddChatContainer from './AddChatContainer'
-import ChatListContainer from './ChatListContainer'
-import SendContainer from './SendContainer'
-import { NotificationContext } from '../context/NotificationProvider'
-import { NotificationContextType } from '../@types/notification'
-import ChatContainer from './ChatContainer'
-import { deleteNotification, receiveNotification } from '../api/api'
+import AddChatContainer from '../AddChatContainer'
+import ChatListContainer from '../ChatListContainer'
+import SendContainer from '../SendContainer'
+import ChatContainer from '../ChatContainer'
+
+import styles from './MessengerContainer.module.scss'
 
 const MessengerContainer: React.FC = () => {
   // Данные контекста авторизации
@@ -46,7 +48,6 @@ const MessengerContainer: React.FC = () => {
       setIsLoading(true)
 
       let responseReceive
-
       while (responseReceive !== null) {
         try {
           responseReceive = await receiveNotification(instance)
@@ -75,8 +76,9 @@ const MessengerContainer: React.FC = () => {
   }, [clickedButton])
 
   return (
-    <div>
-      <h2>🍎 Auth context data</h2>
+    <div className={styles.messengerContainer}>
+      {/* Для отладки */}
+      {/* <h2>🍎 Auth context data</h2>
       <p>ID: {instance.idInstance}</p>
       <p>Token: {instance.token}</p>
       <p>IsAuth: {instance.isAuth ? 'true' : 'false'}</p>
@@ -91,12 +93,16 @@ const MessengerContainer: React.FC = () => {
           <small>{JSON.stringify(notification)}</small>
         </p>
       ))}
-      <button onClick={handleClick}>{isLoading ? 'Lodading...' : 'load new messages'}</button>
+      <button onClick={handleClick}>{isLoading ? 'Lodading...' : 'load new messages'}</button> */}
 
-      <AddChatContainer />
-      <ChatListContainer />
-      <ChatContainer />
-      <SendContainer />
+      <aside className={styles.sidebar}>
+        <AddChatContainer />
+        <ChatListContainer />
+      </aside>
+      <div className={styles.chat}>
+        <ChatContainer />
+        <SendContainer />
+      </div>
     </div>
   )
 }

@@ -1,0 +1,9 @@
+@import "../../styles/index.scss";
+
+.messenger {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: $background-color-dark;
+}
