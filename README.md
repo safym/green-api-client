@@ -32,7 +32,7 @@
     <img height="320px" src="https://github.com/safym/green-api-client/assets/99616798/dc62370b-c3ae-49c7-8e0c-d58f0fbb1861" />
 </p>
 <p align="center">
-    <img height="700px" src="https://github.com/safym/green-api-client/assets/99616798/d8b0897c-89c2-4921-9f77-803db1c5afee" />
+    <img height="600px" src="https://github.com/safym/green-api-client/assets/99616798/d8b0897c-89c2-4921-9f77-803db1c5afee" />
 </p>
 
 <h2 id="commands">🛠 Commands</h2>
