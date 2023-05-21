@@ -3,13 +3,16 @@
 .input {
   min-width: 100%;
   padding: 15px;
+  display: block;
+
+  color: $text-color-dark;
   border-radius: 5px;
+  background-color: $color-white;
   box-shadow: rgba($color-dark-blue, 0.2) 0px 0px 0px 1px;
   transition: box-shadow ease-out 0.2s;
-  display: block;
 
   &:focus {
     background-color: $color-white;
-    box-shadow: rgba($color-green, 0.3) 0px 0px 0px 2px;
+    box-shadow: rgba($color-green, 0.5) 0px 0px 0px 2px;
   }
 }
