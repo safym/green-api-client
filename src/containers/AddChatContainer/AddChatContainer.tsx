@@ -1,20 +1,22 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import { AuthContextType } from '../@types/auth'
-import { ChatItem, MessengerContextType } from '../@types/messenger'
+import { AuthContextType } from '../../@types/auth'
+import { ChatItem, MessengerContextType } from '../../@types/messenger'
 
-import { checkWhatsapp } from '../api/api'
+import { checkWhatsapp } from '../../api/api'
 
-import { AuthContext } from '../context/AuthProvider'
-import { MessengerContext } from '../context/MessengerProvider'
+import { AuthContext } from '../../context/AuthProvider'
+import { MessengerContext } from '../../context/MessengerProvider'
 
-import Button from '../components/Button/Button'
-import Input from '../components/Input/Input'
+import Button from '../../components/Button/Button'
+import Input from '../../components/Input/Input'
 
-import { cleanDigits } from '../utils/cleanDigits'
-import { getChatId } from '../utils/getChatId'
-import { setLocalStorageItem } from '../utils/setLocalStorageItem'
-import { getLocalStorageItem } from '../utils/getLocalStorageItem'
+import { cleanDigits } from '../../utils/cleanDigits'
+import { getChatId } from '../../utils/getChatId'
+import { setLocalStorageItem } from '../../utils/setLocalStorageItem'
+import { getLocalStorageItem } from '../../utils/getLocalStorageItem'
+
+import styles from './AddChatContainer.module.scss'
 
 const AddChatContainer: React.FC = () => {
   const chatInitialState = {
@@ -32,7 +34,7 @@ const AddChatContainer: React.FC = () => {
   const [newChat, setNewChat] = useState<ChatItem>({ ...chatInitialState })
 
   const [formIsSubmit, setformIsSubmit] = useState<boolean>(false)
-  const [existsWhatsapp, setExistsWhatsapp] = useState<boolean>(false)
+  const [existsWhatsapp, setExistsWhatsapp] = useState<boolean | null>(null)
   const [error, setError] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -42,6 +44,7 @@ const AddChatContainer: React.FC = () => {
     const clearValue = cleanDigits(value)
     const chatId = getChatId(clearValue)
 
+    setExistsWhatsapp(null)
     setFormData((prevCount) => ({
       ...prevCount,
       [name]: clearValue,
@@ -69,6 +72,7 @@ const AddChatContainer: React.FC = () => {
 
       const response = await checkWhatsapp(instance, newChat.phoneNumber)
 
+      console.log(response)
       if (!response) {
         setError(true)
         return
@@ -90,7 +94,7 @@ const AddChatContainer: React.FC = () => {
     addChat(newChat)
     setCurrentChat(newChat)
 
-    setExistsWhatsapp(false)
+    setExistsWhatsapp(null)
   }, [existsWhatsapp])
 
   // Сохранение списка чатов в LocalStorage
@@ -112,15 +116,32 @@ const AddChatContainer: React.FC = () => {
   }, [])
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p>formData: {JSON.stringify(formData)}</p>
-      <p>newChat: {JSON.stringify(newChat)}</p>
+    <form onSubmit={handleSubmit} className={styles.addChat}>
+      {/* Для отладки */}
+      {/* <p>formData: {JSON.stringify(formData)}</p>
+      <p>newChat: {JSON.stringify(newChat)}</p> */}
 
-      <p>existsWhatsapp: {existsWhatsapp ? 'true' : 'false'}</p>
-      <p>error: {error && 'error'}</p>
+      <div className={styles.container}>
+        <div className={styles.inputWrapper}>
+          <Input
+            type="text"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            required
+            placeholder={'New chat'}
+          />
+        </div>
 
-      <Input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
-      <Button type={'submit'}>{isLoading ? 'Loading...' : 'Add chat'}</Button>
+        <div className={styles.buttonWrapper}>
+          <Button type={'submit'} isLoading={isLoading}>
+            Add
+          </Button>
+        </div>
+      </div>
+
+      {existsWhatsapp === false && <p className={styles.error}>WhatsApp chat not found</p>}
+      {error && <p className={styles.error}>An error has occurred</p>}
     </form>
   )
 }

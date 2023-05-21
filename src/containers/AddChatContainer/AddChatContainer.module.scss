@@ -1,0 +1,24 @@
+@import '../../styles/index.scss';
+
+.addChat {
+  
+  .container {
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5px;
+
+    .inputWrapper {
+      position: relative;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.error {
+  margin: 10px 0;
+  color: $color-red;
+  text-align: center;
+}
