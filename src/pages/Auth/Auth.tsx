@@ -5,8 +5,9 @@ import { AuthContextType } from '../../@types/auth'
 import { AuthContext } from '../../context/AuthProvider'
 import AuthContainer from '../../containers/AuthContainer/AuthContainer'
 
-import styles from "./Auth.module.scss"
 import { ImWhatsapp } from 'react-icons/im';
+
+import styles from "./Auth.module.scss"
 
 const Auth: React.FC = () => {
   const { instance } = useContext(AuthContext) as AuthContextType
