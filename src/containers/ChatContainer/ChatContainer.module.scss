@@ -1,0 +1,21 @@
+@import '../../styles/index.scss';
+
+.chat {
+
+}
+
+.header {
+  height: 75px;
+  padding: 0 40px;
+  position: relative;
+  z-index: 3;
+  
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  background-color: $color-gunmetal
+  // .phoneNumber {
+
+  // }
+}

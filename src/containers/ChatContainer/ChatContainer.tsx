@@ -1,14 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-import { ChatItem, MessengerContextType } from '../@types/messenger'
-import { Message } from '../@types/chat'
-import { AuthContextType } from '../@types/auth'
+import { formatPhoneNumber } from '../../utils/formatPhoneNumber'
 
-import { AuthContext } from '../context/AuthProvider'
-import { MessengerContext } from '../context/MessengerProvider'
+import { ChatItem, MessengerContextType } from '../../@types/messenger'
+import { Message } from '../../@types/chat'
+import { Notification, NotificationContextType, GroupedNotifications } from '../../@types/notification'
+import { AuthContextType } from '../../@types/auth'
 
-import { NotificationContext } from '../context/NotificationProvider'
-import { Notification, NotificationContextType, GroupedNotifications } from '../@types/notification'
+import { AuthContext } from '../../context/AuthProvider'
+import { MessengerContext } from '../../context/MessengerProvider'
+import { NotificationContext } from '../../context/NotificationProvider'
+
+import styles from './ChatContainer.module.scss'
 
 const ChatContainer: React.FC = () => {
   // Данные контекста авторизации
@@ -39,7 +42,12 @@ const ChatContainer: React.FC = () => {
   }, [groupedNotifications, currentChat])
 
   return (
-    <div>
+    <div className={styles.chatContainer}>
+      <div className={styles.header}>
+        <span className={styles.phoneNumber}>{formatPhoneNumber(currentChat.phoneNumber)}</span>
+      </div>
+
+      {/* Для отладки */}
       <p>filtered notifications here</p>
       <h4>FILTERED:</h4>
       <p>{JSON.stringify(chatNotifications)}</p>
@@ -49,6 +57,8 @@ const ChatContainer: React.FC = () => {
           <small>{JSON.stringify(notification)}</small>
         </p>
       ))}
+
+
     </div>
   )
 }
