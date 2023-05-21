@@ -3,10 +3,12 @@
 .chatPreview {
   cursor: pointer;
 
-  border-top: $border;
+  &:not(:first-child) {
+    border-top: lighten($background-color-dark, 5%) 1px solid;
+  }
 
   &:last-child {
-    border-bottom: $border;
+    border-bottom: lighten($background-color-dark, 5%) 1px solid;
   }
 
   &:hover {
