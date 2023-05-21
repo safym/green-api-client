@@ -107,7 +107,7 @@ const SendContainer: React.FC = () => {
       {currentChat.chatId && (
         <form onSubmit={handleSubmit}>
           <textarea name="message" value={formData.message} onChange={handleChange} required />
-          <Button type="submit">{isLoading ? 'Sending...' : 'Send'}</Button>
+          <Button type="submit" isLoading={false}>Send</Button>
         </form>
       )}
     </div>
