@@ -5,6 +5,7 @@ import { AuthContextType } from '../@types/auth'
 
 import { AuthContext } from '../context/AuthProvider'
 import MessengerProvider from '../context/MessengerProvider'
+import NotificationProvider from '../context/NotificationProvider'
 
 import MessengerContainer from '../containers/MessengerContainer'
 
@@ -18,14 +19,14 @@ const Messenger = () => {
     }
   }, [instance])
 
-
   return (
     <div>
       <h1>Messenger page</h1>
       <MessengerProvider>
-        <MessengerContainer />
+        <NotificationProvider>
+          <MessengerContainer />
+        </NotificationProvider>
       </MessengerProvider>
-
     </div>
   )
 }
