@@ -98,20 +98,8 @@ const AuthContainer: React.FC = () => {
       <p>{error && 'Ошибка авторизации'}</p>
 
       <form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="idInstance"
-          value={formData.idInstance}
-          onChange={handleInputChange}
-          required
-        />
-        <Input
-          type="text"
-          name="token"
-          value={formData.token}
-          onChange={handleInputChange}
-          required
-        />
+        <Input type="text" name="idInstance" value={formData.idInstance} onChange={handleInputChange} required />
+        <Input type="text" name="token" value={formData.token} onChange={handleInputChange} required />
         <Button type={'submit'}>{isLoading ? 'Loading...' : 'Login'}</Button>
       </form>
     </>

@@ -6,16 +6,8 @@ interface Props {
   required: boolean
 }
 
-const Input = ({type, name, value, onChange, required, ...props}: Props) => {
-  return (
-    <input
-      type={type}
-      name={name}
-      value={value}
-      onChange={onChange}
-      required={required}
-    />
-  )
+const Input = ({ type, name, value, onChange, required, ...props }: Props) => {
+  return <input type={type} name={name} value={value} onChange={onChange} required={required} />
 }
 
 export default Input

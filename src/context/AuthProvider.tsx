@@ -16,9 +16,7 @@ const AuthProvider: React.FC<any> = ({ children }) => {
     setInstance,
   }
 
-  return (
-    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
-  )
+  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
 }
 
 export default AuthProvider

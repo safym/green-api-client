@@ -107,7 +107,7 @@ const AddChatContainer: React.FC = () => {
     if (chatListDataString) {
       const chatListData = JSON.parse(chatListDataString)
 
-      setChatList([ ...chatListData ])
+      setChatList([...chatListData])
     }
   }, [])
 
@@ -119,13 +119,7 @@ const AddChatContainer: React.FC = () => {
       <p>existsWhatsapp: {existsWhatsapp ? 'true' : 'false'}</p>
       <p>error: {error && 'error'}</p>
 
-      <Input
-        type="text"
-        name="phoneNumber"
-        value={formData.phoneNumber}
-        onChange={handleChange}
-        required
-      />
+      <Input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
       <Button type={'submit'}>{isLoading ? 'Loading...' : 'Add chat'}</Button>
     </form>
   )

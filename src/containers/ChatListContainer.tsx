@@ -8,18 +8,12 @@ import ChatPreview from '../components/ChatPreview'
 
 const ChatListContainer = () => {
   // Данные контекста мессенджера
-  const { chatList, setCurrentChat } = useContext(
-    MessengerContext
-  ) as MessengerContextType
+  const { chatList, setCurrentChat } = useContext(MessengerContext) as MessengerContextType
 
   return (
     <div>
       {chatList.map((chatItem, index) => (
-        <ChatPreview
-          key={index}
-          chatItem={chatItem}
-          onClick={() => setCurrentChat(chatItem)}
-        />
+        <ChatPreview key={index} chatItem={chatItem} onClick={() => setCurrentChat(chatItem)} />
       ))}
     </div>
   )
