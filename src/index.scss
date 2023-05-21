@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -58,4 +58,24 @@ button:focus-visible {
 
 input {
   width:380px;
+} */
+
+@import "./styles/var.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap');
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: $font-weight-regular;
+  color: $text-color-light;
+}
+
+h1 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+
+h2 {
+  font-size: $font-size-l;
 }
