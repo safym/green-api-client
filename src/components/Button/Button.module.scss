@@ -3,7 +3,7 @@
 .button {
   @include flexCenter;
   column-gap: 20px;
-  
+
   padding: 15px;
   width: 100%;
 
@@ -12,12 +12,12 @@
 
   border-radius: 5px;
   border-style: none;
-  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
 
   font-size: $font-size-l;
   font-weight: $font-weight-bold;
 
   transform: translate3d(0, 0, 0);
+  transition-duration: 0.2s;
   user-select: none;
 
   &:disabled,
@@ -30,15 +30,10 @@
 
   &:hover {
     background-color: darken($color-green, 5%);
-    transition-duration: 0.35s;
   }
 
   &:active {
-    transform: translateY(2px);
-    transition-duration: 0.35s;
-  }
+    background-color: darken($color-green, 10%);
 
-  &:hover {
-    transition-duration: 0.35s;
   }
 }
