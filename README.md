@@ -27,14 +27,14 @@
 <h2 id="screenshots">📸 Screenshots</h2>
 
 ### 🖥️ Desktop
-<p align="center">
+<div align="center">
     <img height="320px" src="https://github.com/safym/green-api-client/assets/99616798/0a537997-f880-409e-814f-9aa7cd6e9684" />
     <img height="320px" src="https://github.com/safym/green-api-client/assets/99616798/dc62370b-c3ae-49c7-8e0c-d58f0fbb1861" />
-</p>
+</div>
 
-<p align="center">
+<div align="center">
     <img height="605px" src="https://github.com/safym/green-api-client/assets/99616798/f67824fe-e06b-489e-83f0-0a01755a781e" />
-</p>
+</div>
 
 <h2 id="commands">🛠 Commands</h2>
 
