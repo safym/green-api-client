@@ -1,4 +1,4 @@
-<h1 align="center">🍀 WhatsApp/Green API Web client</h1>
+<h1 align="center">🟢 WhatsApp/Green API Web client</h1>
 
 <h3 align="center">Тестовое задание на должность "Фронтенд разработчик React"</h3>
 <p align="center"> Пользовательский интерфейс для
