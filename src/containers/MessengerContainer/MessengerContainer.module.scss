@@ -5,6 +5,8 @@ $color-gunmetal-lighter: lighten($color-gunmetal, 5%);
 .messengerContainer {
   display: flex;
   max-width: 1500px;
+  max-height: 950px;
+  overflow: hidden;
   height: 100%;
   margin: 0 auto;
 
@@ -17,6 +19,7 @@ $color-gunmetal-lighter: lighten($color-gunmetal, 5%);
 }
 
 .chat {
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -39,4 +42,11 @@ $color-gunmetal-lighter: lighten($color-gunmetal, 5%);
       background-image: url("../../assets/chat-bg.png");
     }
   }
+}
+
+.loader {
+  position: absolute;
+  z-index: 3;
+  bottom: 2px;
+  left: 50%
 }

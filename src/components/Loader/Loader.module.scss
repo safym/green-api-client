@@ -1,6 +1,6 @@
 @import '../../styles/index.scss';
 
-.loader {
+.spinning {
   width: 20px;
   height: 20px;
   padding: 10px;
@@ -10,7 +10,7 @@
   position: relative;
   box-sizing: border-box;
   -webkit-animation: rotation 2s linear infinite;
-          animation: rotation 2s linear infinite;
+  animation: rotation 2s linear infinite;
 }
 
 @-webkit-keyframes rotation {
@@ -30,5 +30,35 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.linear {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  margin: 5px auto;
+  position: relative;
+  color: $background-color-outgoing;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+  }
+  25% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 2px;
+  }
+  50% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 2px,  -38px 0 0 -2px;
+  }
+  75% {
+    box-shadow: 14px 0 0 2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+  }
+  100% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
   }
 }

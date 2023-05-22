@@ -111,7 +111,7 @@ const SendContainer: React.FC = () => {
             required
             placeholder={'Enter a message...'}
           />
-          <button type="submit" className={styles.sendButton}>
+          <button type="submit" className={styles.sendButton} disabled={isLoading}>
             {isLoading ? <Loader /> : <AiOutlineSend className={styles.sendIcon} />}
           </button>
         </form>

@@ -15,6 +15,7 @@ import SendContainer from '../SendContainer/SendContainer'
 import ChatContainer from '../ChatContainer/ChatContainer'
 
 import styles from './MessengerContainer.module.scss'
+import Loader from '../../components/Loader/Loader'
 
 const MessengerContainer: React.FC = () => {
   // Данные контекста авторизации
@@ -75,6 +76,11 @@ const MessengerContainer: React.FC = () => {
       <div className={styles.chat}>
         <div className={styles.canvas}>
           <ChatContainer />
+          {isLoading && (
+            <div className={styles.loader}>
+              <Loader type="linear" />
+            </div>
+          )}
         </div>
         <SendContainer />
       </div>

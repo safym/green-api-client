@@ -4,8 +4,8 @@ export function formatTimestamp(timestamp: number) {
 
   const day = date.getDate()
   const month = date.toLocaleString('en-US', { month: 'short' });
-  const hours = date.getHours()
-  const minutes = date.getMinutes()
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
 
   return `${day} ${month} ${hours}:${minutes}`
 }

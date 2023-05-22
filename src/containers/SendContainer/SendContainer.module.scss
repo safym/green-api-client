@@ -11,6 +11,10 @@
 
 .sendButton {
   padding: 20px;
+
+  &[disabled] {
+    pointer-events: none;
+  }
   
   .sendIcon {
     color: rgba($color-white, 0.5);
